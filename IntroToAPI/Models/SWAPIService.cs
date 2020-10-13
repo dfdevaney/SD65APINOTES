@@ -21,5 +21,35 @@ namespace IntroToAPI.Models
             }
             return null;
         }
+
+        public async Task<Vehicle> GetVehicleAsync(string url)
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<Vehicle>(); // Does the same operation as the Method above.
+            }
+            return null;
+        }
+
+        public async Task<T> GetTAsyncGeneric<T>(string url)
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+            if(response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<T>();
+            }
+            return default; // Default needs to be used because of the generic type.
+        }
+
+        public async Task<SearchResult<Person>> GetPersonSearchAsync(string query)
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync("https://swapi.dev/api/people/?search=" + query);
+            if(response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<SearchResult<Person>>();
+            }
+            return null;
+        }
     }
 }

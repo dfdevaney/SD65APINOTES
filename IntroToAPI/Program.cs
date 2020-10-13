@@ -30,6 +30,36 @@ namespace IntroToAPI
                     Console.WriteLine(vehicle.name);
                 }
             }
+
+            SWAPIService swapiService = new SWAPIService();
+
+            // Cycles through first 10 Persons on the List: for (int i = 1; i <= 10; i++) { }
+
+            Person personOne = swapiService.GetPersonAsync("http://swapi.dev/api/people/08/").Result; // A new person. Does the same operation as code above.
+
+                if (personOne != null)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"The Character that has been Entered is: {personOne}.");
+                    foreach (string vehicleUrl in personOne.vehicles)
+                    {
+                        var vehicle = swapiService.GetVehicleAsync(vehicleUrl).Result;
+                        Console.WriteLine($"They drive a {vehicle.name}");
+                    }
+                    Console.ReadKey();
+                }
+            
+
+            var genericResponse = swapiService.GetTAsyncGeneric<Vehicle>("http://swapi.dev/api/vehicles/4/").Result;
+            Console.WriteLine(genericResponse.cargo_capacity);
+            Console.WriteLine(genericResponse.name);
+
+            SearchResult<Person> skywalkers = swapiService.GetPersonSearchAsync("skywalker").Result;
+            foreach(Person person in skywalkers.results)
+            {
+                Console.WriteLine(person.name);
+            }
+
         }
     }
 }
