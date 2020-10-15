@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantRaterAPI", "Resta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralStoreAPI", "GeneralStoreAPI\GeneralStoreAPI.csproj", "{3F1CE608-2409-49E0-A935-4DA8BEC3ACA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElevenNote", "ElevenNote\ElevenNote.csproj", "{B984CA8D-82CC-40B4-B840-6C81B7344471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3F1CE608-2409-49E0-A935-4DA8BEC3ACA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F1CE608-2409-49E0-A935-4DA8BEC3ACA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F1CE608-2409-49E0-A935-4DA8BEC3ACA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B984CA8D-82CC-40B4-B840-6C81B7344471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B984CA8D-82CC-40B4-B840-6C81B7344471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B984CA8D-82CC-40B4-B840-6C81B7344471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B984CA8D-82CC-40B4-B840-6C81B7344471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
